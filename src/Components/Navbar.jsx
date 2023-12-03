@@ -14,14 +14,14 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <div>
-            <div className='flex justify-between items-center space-x-5 p-4 bg-[#222f3e]  border-b-2 border-red-500 text-white' >
+        <div className=' fixed'>
+            <div className='flex  justify-between items-center space-x-5 p-4 bg-[#222f3e]  border-b-4 border-[#f35f19] text-white' >
             <div className='flex items-center space-x-5'>
                 <div className='w-[20%] pr-5 border-r border-black'>
                     <img src="https://m.media-amazon.com/images/G/01/AdProductsMarketing/A20m/amazon_ads_logo._TTW_.png" alt="" />
                 </div>
                 <div className="flex items-center space-x-5">
-                    <p><BsCalendar4Event className='text-[#e69063]' /></p>
+                    <p><BsCalendar4Event className='text-[#f35f19]' /></p>
                     <div>
                         <p className='text-lg font-[400] '>Sponsored ads</p>
                         <p className='text-lg font-bold'>Campaign manages</p>
@@ -44,23 +44,23 @@ const Navbar = () => {
                 <div className='text-2xl'><MdAccountCircle/></div>
         </div>
 
-        <aside className='fixed p-4 left-0 z-50  shadow-lg flex flex-col '>
-            <Link to="/" className='pb-5 border-b border-gray-300'><CgMenuGridR className='text-3xl'/></Link>
+        <aside className='fixed p-4 left-0 top-0 mt-24 z-50  shadow-lg flex flex-col bg-[#fbfbfb] '>
+            <Link to="/" className='pb-9  border-b border-gray-300'><CgMenuGridR className='text-3xl'/></Link>
 
-            <Link to="/" className='pb-5 border-b border-gray-300 mt-7'><BsCalendar4Event className='text-2xl text-[#f35f19]'/></Link>
+            <Link to="/" className='pb-9 border-b border-gray-300 mt-7'><BsCalendar4Event className='text-2xl text-[#f35f19]'/></Link>
             
 
-            <Link to="/" className='pb-5  mt-2'><BiBookmarkHeart className='text-2xl '/></Link>
+            <Link to="/" className='pb-5  mt-7'><BiBookmarkHeart className='text-2xl '/></Link>
 
-            <Link to="/" className='pb-5  mt-2'><TiMessages className='text-2xl '/></Link>
+            <Link to="/" className='pb-5  mt-7'><TiMessages className='text-2xl '/></Link>
 
             <Link to="/" className='pb-5  mt-2'><BsGraphUpArrow className='text-2xl '/></Link>
 
             <Link to="/" className='pb-5  mt-2'><BiSignal4 className='text-2xl '/></Link>
 
-            <Link to="/" className='pb-5  mt-7'><CgMenuGridR className='text-2xl '/></Link>
+            <Link to="/" className='pb-5  mt-2'><CgMenuGridR className='text-2xl '/></Link>
 
-            <Link to="/" className='pb-5  mt-12'><IoSettingsOutline className='text-2xl '/></Link>
+            <Link to="/" className='pb-5  mt-10'><IoSettingsOutline className='text-2xl '/></Link>
 
         </aside>
         </div>
