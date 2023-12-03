@@ -14,6 +14,7 @@ const Home = () => {
     let value3 = ['0', '0.5', '1', '1.5', '2', '2.5',];
 
     const handleItemClick = (item) => {
+        console.log(selectedItems.includes('Bar 1'));
         if (selectedItems.includes(item)) {
             setSelectedItems(selectedItems.filter((selectedItem) => selectedItem !== item));
         } else {
@@ -68,7 +69,7 @@ const Home = () => {
             yaxis: [
                 {
                     categories: value,
-                    tickAmount: 6,
+                    // tickAmount: 5,
 
                     axisTicks: {
                         show: true
@@ -78,23 +79,16 @@ const Home = () => {
                         color: '#2e8cb8',
                     },
                     labels: {
-                        formatter: function (value) {
-                            return '$' + value;
-                        },
+                        formatter: (value)=>{ return '$' + value},
                         style: {
                             colors: '#2e8cb8',
                         },
-                        title: {
-                            text: 'Line 1',
-                            style: {
-                                color: '#2e8cb8',
-                            },
-                        },
+                      
                     }
                 },
                 {
                     categories: value1,
-                    tickAmount: 6,
+                    // tickAmount: 6,
                     opposite: false,
                     axisTicks: {
                         show: true,
@@ -105,22 +99,17 @@ const Home = () => {
                     },
                     labels: {
                         formatter: function (value1) {
-                            return 'K' + value1;
+                            return  + value1;
                         },
                         style: {
                             colors: '#dd7703',
                         },
                     },
-                    title: {
-                        text: 'Bar 1',
-                        style: {
-                            color: '#dd7703',
-                        },
-                    },
+                 
                 },
                 {
                     categories: value2,
-                    tickAmount: 6,
+                    // tickAmount: 6,
                     opposite: true,
                     axisTicks: {
                         show: true,
@@ -137,16 +126,11 @@ const Home = () => {
                             colors: '#a3317b',
                         },
                     },
-                    title: {
-                        text: 'Line 2',
-                        style: {
-                            color: '#a3317b',
-                        },
-                    },
+                 
                 },
                 {
                     categories: value3,
-                    tickAmount: 6,
+                    // tickAmount: 6,
                     opposite: true,
                     axisTicks: {
                         show: true,
@@ -163,12 +147,7 @@ const Home = () => {
                             colors: '#587021',
                         },
                     },
-                    title: {
-                        text: 'Line 3',
-                        style: {
-                            color: '#587021',
-                        },
-                    },
+                   
                 },
             ],
 
