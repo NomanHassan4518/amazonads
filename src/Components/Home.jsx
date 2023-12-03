@@ -158,13 +158,13 @@ const Home = () => {
 
 
     return (
-        <div className='pl-16 pt-24' >
+        <div className='lg:pl-16 lg:pt-24' >
             <div className='pb-3 border-b border-gray-200'>
-                <p className='ml-4 mt-2  inline-block py-1 px-4 rounded-full text-white  bg-[#57677e]'>Country: Unites States</p>
+                <p className='ml-4 mt-2  inline-block lg:py-1 py-2 px-4 rounded-full text-white  bg-[#57677e]'>Country: Unites States</p>
             </div>
 
-            <div className="grid grid-cols-12 gap-2 w-full  ">
-                <div className='bg-[#fbfbfb] col-span-2 flex flex-col'>
+            <div className="lg:grid hidden grid-cols-12 gap-2 w-full  ">
+                <div className='bg-[#fbfbfb] lg:col-span-2 col-span-12 lg:flex hidden flex-col'>
                     <Link to="/" className='py-4 px-4 border-b border-gray-200'>Postfolios</Link>
                     <Link to="/" className='py-3 px-4  font-semibold '>Campaigns</Link>
                     <Link to="/" className='py-3 px-4  font-semibold  bg-[#e5e6e8] rounded mx-4'>Singal Country</Link>
@@ -190,7 +190,7 @@ const Home = () => {
                     </Link>
                 </div>
 
-                <div className=' col-span-10 border border-gray-300'>
+                <div className=' lg:col-span-10 col-span-12 border border-gray-300'>
                     <div className=' border-b border-gray-200 grid grid-cols-4'>
 
                         <div className={`hover:bg-gray-100 cursor-pointer ${selectedItems.includes('Line 1')?'border-t-4 border-[#2e8cb8]':'border-none'}`} onClick={()=>handleItemClick('Line 1')}>
