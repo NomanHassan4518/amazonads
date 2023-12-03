@@ -7,10 +7,12 @@ import { AiOutlineExclamationCircle } from "react-icons/ai";
 const Home = () => {
  
     const [selectedItems, setSelectedItems] = useState(['Line 1']);
+
     let value = ['0', '20', '40', '60', '80', '100',];
     let value1 = ['0', '2', '4', '6', '8', '10',];
     let value2 = ['0', '10', '20', '30', '40', '50',];
     let value3 = ['0', '0.5', '1', '1.5', '2', '2.5',];
+
     const handleItemClick = (item) => {
         if (selectedItems.includes(item)) {
             setSelectedItems(selectedItems.filter((selectedItem) => selectedItem !== item));
@@ -21,7 +23,6 @@ const Home = () => {
 
     const chartData = {
         series: [
-            
             {
             name: 'Line 1',
             type: 'line',
@@ -39,27 +40,25 @@ const Home = () => {
             name: 'Line 2',
             type: 'line',
             data: [34, 37, 34, 35, 36, 33, 35, 40, 49, 46, 40, 41,35,39,36,37,40],
-            title: {
-                style: {
-                    color: '#feb019',
-                },
-            },
+           
         },
         
         {
             name: 'Line 3',
             type: 'line',
-            data: [150, 155, 145, 148, 158, 160, 155, 151, 148, 159, 151, 155],
+            data: [1.65, 1.55, 1.62, 1.62, 1.59, 1.73, 1.62, 1.50, 1.48, 1.59, 1.65, 1.44,1.44, 1.65, 1.45,1.61,1.60,1.43],
 
         },
         ],
         options: {
             chart: {
-               
+                
+                id:'mixed-chart',
                 toolbar: {
                     show: false, // Set to false to hide the toolbar
                 },
             },
+            colors: ['#2e8cb8','#dd7703','#a3317b','#587021'],
             stroke: {
                 width: 2, // Set line width
             },
@@ -159,7 +158,7 @@ const Home = () => {
                     },
                     labels: {
                         formatter: function (value3) {
-                            return  value3;
+                            return '$'+ value3.toFixed(2);
                         },
                         style: {
                             colors: '#587021',
