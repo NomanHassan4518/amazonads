@@ -52,7 +52,6 @@ const Home = () => {
         ],
         options: {
             chart: {
-                
                 id:'mixed-chart',
                 toolbar: {
                     show: false, // Set to false to hide the toolbar
