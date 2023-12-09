@@ -1,24 +1,74 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer{
-    .ant-drawer-close {
-        padding: 11px !important;
-        display: inline-block;
-        margin-inline-end: 12px;
+@layer {
+  .ant-drawer-close {
+    padding: 11px !important;
+    display: inline-block;
+    margin-inline-end: 12px;
+    color: white !important;
+    font-weight: 900 !important;
+    font-size: 18px !important;
+    font-style: normal;
+    line-height: 1;
+    text-align: center;
+    text-transform: none;
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid white !important;
+    outline: 0;
+    cursor: pointer;
+    transition: color 0.2s;
+    text-rendering: auto;
+  }
+
+  .ant-picker-suffix {
+    display: none !important;
+  }
+
+  .ant-picker-dropdown {
+    display: block !important;
+    top: 33% !important;
+    left: 50% !important;
+  }
+
+  /* .ant-picker-cell-in-range::before{
+       
         color: white !important;
-        font-weight: 900 !important;
-        font-size: 18px !important;
-        font-style: normal;
-        line-height: 1;
-        text-align: center;
-        text-transform: none;
-        text-decoration: none;
-        background: transparent;
-        border: 2px solid white !important;
-        outline: 0;
-        cursor: pointer;
-        transition: color 0.2s;
-        text-rendering: auto;
+    } */
+
+    .ant-picker-cell-in-range::before{
+        background-color: white !important;
     }
+
+    .ant-picker-cell-selected::before{
+        background-color: white !important;
+    }
+
+    .ant-picker-cell-range-end::before{
+        background-color: white !important;
+    }
+
+  .ant-picker-cell-in-range .ant-picker-cell-inner {
+    background-color: blue !important;
+    color: white !important;
+  }
+
+  .ant-picker-cell-selected .ant-picker-cell-inner {
+    background-color: #00508a !important;
+    color: white !important;
+  }
+
+  .ant-picker-cell-range-hover-start .ant-picker-cell-inner {
+    color: white !important;
+  }
+
+  .ant-picker-cell-range-hover-end .ant-picker-cell-inner {
+    color: white !important;
+  }
+
+  .ant-picker-cell-range-end .ant-picker-cell-inner {
+    background-color: #00508a !important;
+    color: white !important;
+  }
 }

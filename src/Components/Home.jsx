@@ -1,36 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 import { Link } from 'react-router-dom';
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
-import { IoMdSearch } from "react-icons/io";
-import { MdKeyboardArrowDown } from "react-icons/md";
 import ResHome from './ResHome';
-import 'react-datepicker/dist/react-datepicker.css';
-import { DatePicker } from 'antd';
-import dayjs from 'dayjs';
-import customParseFormat from 'dayjs/plugin/customParseFormat';
+import Header from './Header';
+
 
 
 const Home = () => {
     const [selectedItems, setSelectedItems] = useState(['Line 1']);
-    let [filter, setFilter] = useState('hidden')
-    let [columns, setColumns] = useState('hidden')
-    let [pickerOpen, setPickerOpen] = useState(false)
-    dayjs.extend(customParseFormat);
-    const { RangePicker } = DatePicker;
-    const dateFormat = 'MM/DD';
-
-    const handleOpenPicker = () => {
-        setPickerOpen(!pickerOpen)
-    }
-
-    const handleDateChange = (date, dateString) => {
-        // Handle the selected date here
-        console.log('Selected Date:', dateString);
-        // You can add additional logic or state updates based on the selected date
-      };
-
+   
 
     let value = ['0', '20', '40', '60', '80', '100',];
     let value1 = ['0', '2', '4', '6', '8', '10',];
@@ -47,36 +27,9 @@ const Home = () => {
         }
 
     };
+  
 
-    const buttonRef = useRef();
-
-    // Event listener to handle clicks outside the button
-    const handleClickOutside = (event) => {
-        if (buttonRef.current && !buttonRef.current.contains(event.target)) {
-            // Clicked outside the button, hide the paragraph
-            setFilter('hidden');
-            setColumns('hidden');
-        }
-    };
-
-    useEffect(() => {
-        // Add event listener when the component mounts
-        document.addEventListener('click', handleClickOutside);
-
-        // Clean up the event listener when the component unmounts
-        return () => {
-            document.removeEventListener('click', handleClickOutside);
-        };
-    }, []); //
-
-    let filterFunc = () => {
-        setFilter('block')
-    }
-
-    let columnsFunc = () => {
-        setColumns('block')
-    }
-
+    
 
 
     const chartData = {
@@ -306,7 +259,7 @@ const Home = () => {
                         </div>
                         <div className={` px-5 w-full ${selectedItems.length === 0 ? 'h-full' : ''} `}>
                             {
-                                selectedItems.length === 0 ? <div className='flex flex-col items-center justify-center w-full h-full'>
+                                selectedItems.length === 0 ? <div className='flex flex-col items-center justify-center w-full  h-[23rem]'>
                                     <h1 className='text-xl font-bold'>No data</h1>
                                     <p>To see the chart, choose different metrics or filters</p>
                                 </div> : <ReactApexChart
@@ -320,113 +273,12 @@ const Home = () => {
                         </div>
                     </div>
 
+<div>
+    <Header/>
+</div>
+                 
 
-                    <div className="p-3 mt-3 bg-[#f3f3f3] rounded border border-gray-200 flex items-center space-x-2 relative ">
-                        <button className='px-3 py-1.5 rounded-full bg-blue-600 text-[14px] text-white font-medium'>
-                            Create campaign
-                        </button>
-
-                        <div className="px-2 py-1 space-x-1 border border-gray-400 rounded bg-white flex items-center">
-                            <span><IoMdSearch /></span>
-                            <input type="search" className='focus:ring-0 focus:border-none focus:outline-none' placeholder='Find a campaign' />
-                        </div>
-
-                        <p className={`flex items-center space-x-1 text-[13px] hover:bg-[#D7DCE2] text-[#232F3F] font-[500] rounded-full px-3 py-1.5 cursor-default `} onClick={filterFunc} ref={buttonRef}>
-                            <span>Filter by</span>
-                            <span><MdKeyboardArrowDown className='text-xl' /></span>
-                        </p>
-
-                        <div className={`${filter} bg-white text-[14px] absolute -top-72 right-[22rem] w-72 rounded h-96 border border-gray-300 overflow-y-auto py-2 space-y-1`} >
-                            <p className='font-medium px-3'>Filters</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Active Status</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Type</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Targeting</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Portfolio</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Budget</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Almost or out of budget</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Impressions</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Click</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Clickthrough rate (CTR)</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Spend</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Cost-per-click (CPC)</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Orders</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Sales</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Advertising cost of sales (ACOS)</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Return on ad spend (ROAS)</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>NTB orders</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>% of orders NTB</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>NTB sales</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>% of sales NTB</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>viewable impressions</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Cost per 1,000 viewable impression (VCMP)</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Detail page views</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Video first quartile</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Video midpoint</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Video third quartile</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Video complete</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Video unmute</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>View-through rate (VTR)</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>View-through rate for views (vCTR)</p>
-                            <p className='hover:bg-gray-300 px-3 cursor-default'>Cost per 1,000 impressions (CPM)</p>
-
-                        </div>
-
-                        <div className='relative group'>
-                            <button className='flex items-center space-x-1 text-[#8292a7] cursor-default'><span>Bulk ation </span>
-                                <span><MdKeyboardArrowDown className='text-xl' /></span>
-                            </button>
-                            <p className='bg-black text-white absolute -top-16 -right-[5rem]  invisible group-hover:visible px-5 py-3 w-[17rem] rounded'>Select row to enable bulk action</p>
-                        </div>
-
-
-                        <p className={`flex items-center space-x-1 text-[13px] hover:bg-[#D7DCE2] text-[#232F3F] font-[500] rounded-full px-3 py-1.5 cursor-default `} onClick={columnsFunc} ref={buttonRef}>
-                            <span>Columns</span>
-                            <span><MdKeyboardArrowDown className='text-xl' /></span>
-                        </p>
-
-                        <div className={`${columns} bg-white text-[14px] absolute top-3 pt-1.5 pb-5 right-[19rem] w-40 rounded h-16 border border-gray-300`}>
-                            <p className='bg-gray-300 px-2 py-1 border-l-4 border-blue-600'>Customize columns</p>
-                            <p className='px-3 py-1'>Reset to default</p>
-                        </div>
-
-
-
-                        <p className={`flex items-center space-x-1 text-[13px] hover:bg-[#D7DCE2] text-[#232F3F] font-[500] rounded-full px-3 py-1.5 cursor-default `} onClick={handleOpenPicker}>
-                            <span>Date range: Nov 27 - Dec 4, 2023</span>
-                            <span><MdKeyboardArrowDown className='text-xl' /></span>
-                        </p>
-
-                        {/* <div className={`${filter} bg-white text-[14px] absolute -top-72 right-[22rem] w-72 rounded h-96 border border-gray-300 overflow-y-auto py-2 space-y-1`}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus obcaecati deserunt, tenetur ab molestiae nulla odio sed praesentium ipsum quae fugit voluptatem esse expedita id eaque, magni culpa magnam rem.
-                        </div> */}
-
-                        <p className={`flex items-center space-x-1 text-[13px] hover:bg-[#D7DCE2] text-[#232F3F] font-[500] rounded-full px-3 py-1.5 cursor-default `}  ref={buttonRef}>
-                            <span>Export</span>
-                        </p>
-
-                        <div>
-                            <DatePicker
-                                open={pickerOpen}
-                                onOpenChange={(open) => setPickerOpen(open)}
-                                onChange={handleDateChange}
-                                // style={{ position: 'absolute', top: '40px', left: '0' }}
-                            />
-                        </div>
-
-                    </div>
-
-                    <div className='h-[20rem] mt-12'>
-                        {/* <RangePicker
-                            open={pickerOpen}
-                            onOpenChange={(open) => setPickerOpen(open)}
-                            defaultValue={[dayjs('11/27', dateFormat), dayjs('12/04', dateFormat)]}
-                            format={dateFormat}
-                            allowClear={false}
-                            autoFocus={false}
-                            bordered={false}
-                            hoverBg='red'
-                        /> */}
-                    </div>
+                   
                 </div>
 
 
