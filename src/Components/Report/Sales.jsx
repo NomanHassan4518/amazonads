@@ -184,21 +184,21 @@ const Sales = () => {
             </div>
 
             <div className="mt-4 bg-white border gap-3 border-gray-400 grid grid-cols-2">
-                <div className='pl-4 border-r border-gray-400'>
+                <div className='pr-5 pl-4 border-r border-gray-300'>
                     <ReactApexChart
                         options={chart1Data.options}
                         series={chart1Series}
                         type="line"
-                        height="320"
+                        height="280"
 
                     />
                 </div>
-                <div className='pl-4 border-r border-gray-400'>
+                <div className=' pl-4 '>
                     <ReactApexChart
                         options={chart2Data.options}
                         series={chart2Series}
                         type="line"
-                        height="320"
+                        height="280"
 
                     />
                 </div>
@@ -209,7 +209,7 @@ const Sales = () => {
                     <p>Compare</p>
                     <Link to='/' className='text-blue-500 hover:underline mt-2 text-sm'>What's this</Link>
                 </div>
-                <div className='pl-3 border-l border-gray-400 flex items-start space-x-2'>
+                <div className='pl-3 border-l border-gray-300 flex items-start space-x-2'>
                     <input
                         checked={today}
                         onChange={handleTodayChange}
@@ -225,7 +225,7 @@ const Sales = () => {
                     </div>
                 </div>
 
-                <div className='pl-3 border-l border-gray-400 flex items-start space-x-2'>
+                <div className='pl-3 border-l border-gray-300  flex items-start space-x-2'>
                     <input
                     checked={yesterday}
                     onClick={() => handleChart('Line 1')}
@@ -242,7 +242,7 @@ const Sales = () => {
                     </div>
                 </div>
 
-                <div className='pl-3 border-l border-gray-400 flex items-start space-x-2'>
+                <div className='pl-3 border-l border-gray-300  flex items-start space-x-2'>
                     <input
                      onClick={() => handleChart('Line 2')}
                      checked={lastWeek}
@@ -258,7 +258,7 @@ const Sales = () => {
                         <p className='text-sm'>$1,088.67</p>
                     </div>
                 </div>
-                <div className='pl-3 border-l border-gray-400 flex items-start space-x-2'>
+                <div className='pl-3 border-l border-gray-300  flex items-start space-x-2'>
                     <input
                       checked={lastWeek1}
                       onChange={hanldeLastWeekCHange1}
