@@ -32,8 +32,8 @@ const Sidebar = () => {
                     :
 
                     <div className=''>
-                        <div className="flex items-center space-x-1 ">
-                            <button onClick={handleMenu}><IoCloseOutline /></button>
+                        <div className="flex items-center space-x-1 cursor-default" onClick={handleMenu}>
+                            <button ><IoCloseOutline /></button>
                             <p className='uppercase text-[#008296]'>Close Reports Menu</p>
                         </div>
                         <div className='mt-4'>
