@@ -3,6 +3,7 @@ import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import Sales from './Sales'
 import { IoCloseOutline } from "react-icons/io5";
+import Footer from './Footer';
 
 const Report = () => {
     return (
@@ -22,6 +23,8 @@ const Report = () => {
                     <Sales />
                 </div>
             </div>
+
+            <Footer/>
         </div>
     )
 }
