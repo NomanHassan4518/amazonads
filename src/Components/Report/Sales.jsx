@@ -156,7 +156,7 @@ const Sales = () => {
 
                 },
                 title: {
-                    text: 'Units orders',
+                    text: 'Ordered product sales',
                     style: {
                         fontWeight: 'light'
                     }
