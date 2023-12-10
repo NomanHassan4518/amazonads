@@ -94,7 +94,8 @@ const Sales = () => {
                 title: {
                     text: 'Units orders',
                     style: {
-                        fontWeight: 'light'
+                        fontWeight: 'light',
+                        fontSize: "14px", 
                     }
                 }
             },
@@ -158,7 +159,8 @@ const Sales = () => {
                 title: {
                     text: 'Ordered product sales',
                     style: {
-                        fontWeight: 'light'
+                        fontWeight: 'light',
+                        fontSize: "14px", 
                     }
                 }
             },

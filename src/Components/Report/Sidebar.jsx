@@ -25,7 +25,7 @@ const Sidebar = () => {
         <div className='py-7 pl-4 pr-3 '>
             {
                 menu ?
-                    <div className='flex items-center justify-center flex-col w-[60px]  mb-72 '  onClick={handleClickMenu}>
+                    <div className='flex items-center justify-center flex-col w-[40px]  mb-72 '  onClick={handleClickMenu}>
                         <button  className='text-center text-gray-500'><IoMenu /></button>
                         <p className='mt-4 text-[#008296] ' style={{writingMode:'vertical-rl'}}>OPEN REPORTS MENU</p>
                     </div>
