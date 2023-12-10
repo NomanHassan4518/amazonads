@@ -3,12 +3,12 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { IoMdSearch } from "react-icons/io";
+import { MdCalendarMonth, MdKeyboardArrowDown } from "react-icons/md";
 
 // import { Link } from 'react-router-dom';
 
 const ResHome = () => {
     const sliderRef = useRef(null);
-
 
     const settings = {
         dots: false,
@@ -45,7 +45,6 @@ const ResHome = () => {
         ],
 
     };
-
 
     return (
         <div className='mt-3 '>
@@ -85,15 +84,21 @@ const ResHome = () => {
                 <div className="flex items-center mt-3 space-x-2">
                     <div className="p-2 border border-gray-400 rounded bg-white flex items-center">
                         <span><IoMdSearch /></span>
-                        <input type="search" className='focus:ring-0 focus:border-none focus:outline-none' placeholder='Find a campaign'/>
+                        <input type="search" className='focus:ring-0 focus:border-none focus:outline-none' placeholder='Find a campaign' />
                     </div>
                     <div>
                         <button className='rounded py-2 px-5 border border-gray-400 text-center bg-white'>Filter</button>
                     </div>
                 </div>
+
+                <div className="mt-4 flex items-center space-x-1 bg-[#f3f3f3] text-[17px] hover:bg-[#D7DCE2] text-[#232F3F] font-[500] rounded-full px-3 py-1.5 cursor-default">
+                    <span><MdCalendarMonth className='text-xl'/></span>
+                    <span> Nov 27 - Dec 4, 2023</span>
+                    <span><MdKeyboardArrowDown className='text-xl' /></span>
+                </div>
             </div>
         </div>
-    ) 
+    )
 }
 
 export default ResHome

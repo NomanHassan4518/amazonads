@@ -5,12 +5,10 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import ResHome from './ResHome';
 import Header from './Header';
-
-
+import Navbar from './Navbar'
 
 const Home = () => {
     const [selectedItems, setSelectedItems] = useState(['Line 1']);
-   
 
     let value = ['0', '20', '40', '60', '80', '100',];
     let value1 = ['0', '2', '4', '6', '8', '10',];
@@ -27,10 +25,6 @@ const Home = () => {
         }
 
     };
-  
-
-    
-
 
     const chartData = {
         series: [
@@ -170,10 +164,12 @@ const Home = () => {
 
     const filteredSeries = chartData.series.filter((item) => selectedItems.includes(item.name));
 
-
     return (
+
+        <>
+        <Navbar />
         <div className='lg:pl-16 lg:pt-24 h-full' >
-            <div className='pb-2 border-b border-gray-200 lg:bg-[#fbfbfc] bg-[#fbfbfc]'>
+            <div className='pb-2 border-b border-gray-200 mt-2 lg:mt-0 lg:bg-[#fbfbfc] bg-[#fbfbfc]'>
                 <p className='ml-4   inline-block lg:py-1 py-2 px-4 rounded-full text-white  bg-[#57677e] hover:shadow-lg cursor-pointer '>Country: United States</p>
             </div>
 
@@ -273,21 +269,18 @@ const Home = () => {
                         </div>
                     </div>
 
-<div>
-    <Header/>
-</div>
-                 
-
-                   
+                    <div>
+                        <Header />
+                    </div>
                 </div>
-
-
             </div>
 
             <div className="lg:hidden block">
                 <ResHome />
             </div>
         </div>
+        </>
+        
     )
 }
 
