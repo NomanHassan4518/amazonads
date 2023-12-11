@@ -40,7 +40,7 @@ const Navbar = () => {
     return (
         <>
             <div className=' fixed w-full z-[10000]'>
-                <div className='lg:flex hidden  justify-between items-center space-x-4 p-4 bg-[#222f3e]  border-b-4 border-[#f35f19] text-white' >
+                <div className='lg:flex hidden  justify-between items-center space-x-4 px-4 py-2.5 bg-[#222f3e]  border-b-4 border-[#f35f19] text-white' >
                     <div className='flex items-center space-x-5'>
                         <div className='w-[16%] pr-5 border-r border-black'>
                             <img src="https://m.media-amazon.com/images/G/01/AdProductsMarketing/A20m/amazon_ads_logo._TTW_.png" alt="" />
@@ -91,7 +91,7 @@ const Navbar = () => {
                             </svg></p>
                             <div className='leading-4 text-[13px]'>
                                 <p className=' font-[400] '>Sponsored ads</p>
-                                <p className='font-bold'>Campaign manages</p>
+                                <p className='font-bold'>Campaign manager</p>
                             </div>
                             <p>
                                 <svg
@@ -158,9 +158,9 @@ const Navbar = () => {
 
                 </div>
 
-                <aside className='fixed lg:flex items-center  hidden p-4 left-0 -top-3 mt-24 z-50  shadow-lg  flex-col bg-[#fbfbfb] text-black'>
+                <aside className='fixed lg:flex items-center  hidden px-4 py-4 left-0 -top-6 mt-24 z-50  shadow-lg  flex-col bg-[#fbfbfb] text-black'>
 
-                    <Link to="/" className='p-2  hover:bg-gray-100   rounded  '>
+                    <Link to="/" className=' hover:bg-gray-100   rounded  '>
                         <svg
                             width="24px"
                             height="24px"
@@ -222,10 +222,10 @@ const Navbar = () => {
                         </svg>
                     </Link>
 
-                    <div className='border-b w-full border-gray-300 mt-5'></div>
+                    <div className='border-b w-full border-gray-300 mt-6'></div>
 
 
-                    <Link to="/" className='p-2  hover:bg-gray-100   rounded  mt-6'>
+                    <Link to="/" className=' hover:bg-gray-100   rounded  mt-6'>
                         <svg
                             width="24px"
                             height="24px"
@@ -271,9 +271,9 @@ const Navbar = () => {
                         </svg>
                     </Link>
 
-                    <div className='border-b w-full border-gray-300 mt-5'></div>
+                    <div className='border-b w-full border-gray-300 mt-7'></div>
 
-                    <Link to="/" className='p-2  hover:bg-gray-100   rounded   mt-5'>
+                    <Link to="/" className='  hover:bg-gray-100   rounded   mt-7'>
                         <svg
                             width="24px"
                             height="24px"
@@ -323,7 +323,7 @@ const Navbar = () => {
                         </svg>
                     </Link>
 
-                    <Link to="/" className='p-2  hover:bg-gray-100   rounded   mt-5'>
+                    <Link to="/" className='  hover:bg-gray-100   rounded   mt-7'>
                         <svg
                             width="24px"
                             height="24px"
@@ -367,7 +367,7 @@ const Navbar = () => {
                         </svg>
                     </Link>
 
-                    <Link to="/" className='p-2  hover:bg-gray-100   rounded   mt-5'>
+                    <Link to="/" className='  hover:bg-gray-100   rounded   mt-7'>
                         <svg
                             width="24px"
                             height="24px"
@@ -417,7 +417,7 @@ const Navbar = () => {
                         </svg>
                     </Link>
 
-                    <Link to="/" className='p-2  hover:bg-gray-100   rounded   mt-5'>
+                    <Link to="/" className='  hover:bg-gray-100   rounded   mt-5'>
                         <svg
                             width="24px"
                             height="24px"
@@ -485,11 +485,11 @@ const Navbar = () => {
                         </svg>
                     </Link>
 
-                    <div className='border-b w-full border-gray-300 mt-3'></div>
+                    <div className='border-b w-full border-gray-300 mt-6'></div>
 
-                    <Link to="/" className=' p-2  hover:bg-gray-100   rounded   mt-5'><CgMenuGridR className='text-2xl ' /></Link>
+                    <Link to="/" className='  hover:bg-gray-100   rounded   mt-8'><CgMenuGridR className='text-2xl ' /></Link>
 
-                    <Link to="/" className='  mt-12 hover:bg-gray-100 p-2 rounded'>
+                    <Link to="/" className='  mt-28 hover:bg-gray-100  rounded'>
                         <svg
                             width="24px"
                             height="24px"

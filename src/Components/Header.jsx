@@ -50,9 +50,10 @@ const Header = () => {
     return (
 
 
-        <div className="p-3 mt-3 bg-[#f3f3f3] rounded border border-gray-200 flex items-center space-x-2 relative ">
-            <button className='px-3 py-1.5 rounded-full bg-blue-600 text-[14px] text-white font-medium'>
-                Create campaign
+       <>
+        <div className="py-3 px-3 mt-3 bg-[#f3f3f3] rounded border border-gray-200 flex items-center justify-between space-x-2 relative ">
+            <button className='px-3 py-1.5 rounded-full bg-[#0073c7] text-[14px] text-white font-medium'>
+            Create campaign
             </button>
 
             <div className="px-2 py-1 space-x-1 border border-gray-400 rounded bg-white flex items-center">
@@ -121,7 +122,7 @@ const Header = () => {
 
             <button  >
                 {datepicker ? <p className={`flex items-center space-x-1 bg-[#f3f3f3] text-[13px] hover:bg-[#D7DCE2] text-[#232F3F] font-[500] rounded-full px-3 py-1.5 cursor-default `} onClick={handleClickDatePicker}>
-                    <span>Date range: Nov 27 - Dec 4, 2023</span>
+                    <span>Date range:Nov 1 - Nov 20, 2023</span>
                     <span><MdKeyboardArrowDown className='text-xl' /></span>
                 </p> :
                     <div className='bg-white text-[14px] absolute -top-[23rem] right-20 w-[47rem]  rounded border border-gray-300 ' >
@@ -137,14 +138,14 @@ const Header = () => {
                                 <p className='hover:bg-gray-100 px-3 text-start cursor-default'>Last month</p>
                                 <p className='hover:bg-gray-100 px-3 text-start cursor-default'>Year to date</p>
                                 <p className='hover:bg-gray-100 px-3 text-start cursor-default'>Life time</p>
-                                <p className=' text-gray-400 px-3 text-start  mt-3'>America/Los_Angeles</p>
+                                <p className=' text-[#5c687c] px-3 text-xs text-start  mt-3'>America/Los_Angeles</p>
                             </div>
 
                             <div >
                                 <RangePicker
                                     open={pickerOpen}
                                     onOpenChange={(open) => setPickerOpen(open)}
-                                    defaultValue={[dayjs('11/27', dateFormat), dayjs('12/04', dateFormat)]}
+                                    defaultValue={[dayjs('11/01', dateFormat), dayjs('11/30', dateFormat)]}
                                     format={dateFormat}
                                     allowClear={false}
                                     autoFocus={false}
@@ -162,11 +163,16 @@ const Header = () => {
                     </div>}
             </button>
 
-            <p className={`flex items-center space-x-1 text-[13px]  hover:bg-[#D7DCE2] text-[#232F3F] font-[500] rounded-full px-3 py-1.5 cursor-default `}  >
+            <p className={` text-[13px]  hover:bg-[#D7DCE2] text-[#232F3F] font-[500] rounded-full px-3 py-1.5 cursor-default `}  >
                 <span>Export</span>
             </p>
 
         </div>
+
+        <div className='h-[12rem] overflow-y-auto'>
+
+        </div>
+       </>
     );
 };
 

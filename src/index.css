@@ -71,4 +71,16 @@
     background-color: #00508a !important;
     color: white !important;
   }
+
+  .ant-picker-super-next-icon{
+    display: none !important;
+  }
+
+  .ant-picker-super-prev-icon{
+    display: none !important;
+  }
+
+  .ant-picker-prev-icon{
+    font-size: 23px !important;
+  }
 }
