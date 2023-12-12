@@ -521,7 +521,7 @@ const Navbar = () => {
                         </svg>
                     </Link>
 
-                </aside>
+                </aside> 
 
                 <div className='p-4 lg:hidden block bg-[#222f3e] text-white w-full'>
                     <div className="flex space-x-1 w-full justify-between items-center">

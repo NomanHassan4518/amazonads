@@ -3,8 +3,8 @@ import ReactApexChart from 'react-apexcharts';
 import { Link } from 'react-router-dom';
 
 const Sales = () => {
-    const [selectedItems, setSelectedItems] = useState(['Line 1','Line 2','Line 3']);
-    const [selectedItems1, setSelectedItems1] = useState(['Line 1','Line 2','Line 3']);
+    const [selectedItems, setSelectedItems] = useState(['Yesterday','Same day last week','Same day last year']);
+    const [selectedItems1, setSelectedItems1] = useState(['Yesterday','Same day last week','Same day last year']);
     const [yesterday, setYesterday] = useState(true)
     const [lastWeek, setLastWeek] = useState(true)
     const [lastWeek1, setLastWeek1] = useState(true)
@@ -45,19 +45,19 @@ const Sales = () => {
     let chart1Data = {
         series: [
             {
-                name: 'Line 1',
+                name: 'Yesterday',
                 type: 'line',
                 data: [0, 0, 0, 0,0,0,0,2,2,2,3,4,2,5,1,4,1,1,1,0,1,1,0],
 
             },
             {
-                name: 'Line 2',
+                name: 'Same day last week',
                 type: 'line',
                 data: [0, 0, 0, 0,2,1,1,2,4,2,1,1,5,2,0,0,3,2,3,2,0,2,0],
 
             },
             {
-                name: 'Line 3',
+                name: 'Same day last year',
                 type: 'line',
                 data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,],
 
@@ -108,19 +108,19 @@ const Sales = () => {
     let chart2Data = {
         series: [
             {
-                name: 'Line 1',
+                name: 'Yesterday',
                 type: 'line',
                 data: [0, 0, 0, 0,0,0,0,79.98,79.98,75.98,113.97,151.96,75.98,185.95,37.99,151.96,37.99,37.99,37.99,0,37.99,37.99,0],
 
             },
             {
-                name: 'Line 2',
+                name: 'Same day last week',
                 type: 'line',
                 data: [0, 0, 0, 0,66,33,33,67,132,67,33,33,165,67,0,0,99,67,99,67,0,67,0],
 
             },
             {
-                name: 'Line 3',
+                name: 'Same day last year',
                 type: 'line',
                 data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,],
 
@@ -228,7 +228,7 @@ const Sales = () => {
                 <div className='pl-3 border-l border-gray-300  flex items-start space-x-2'>
                     <input
                     checked={yesterday}
-                    onClick={() => handleChart('Line 1')}
+                    onClick={() => handleChart('Yesterday')}
                     onChange={handleTodayCHange}
                     type="checkbox" className='bg-[#f5f9fa] mt-4' />
                     <div>
@@ -244,7 +244,7 @@ const Sales = () => {
 
                 <div className='pl-3 border-l border-gray-300  flex items-start space-x-2'>
                     <input
-                     onClick={() => handleChart('Line 2')}
+                     onClick={() => handleChart('Same day last week')}
                      checked={lastWeek}
                      onChange={hanldeLastWeekCHange}
                     type="checkbox" className='bg-[#f5f9fa] mt-4' />
@@ -262,7 +262,7 @@ const Sales = () => {
                     <input
                       checked={lastWeek1}
                       onChange={hanldeLastWeekCHange1}
-                     onClick={() => handleChart('Line 3')}
+                     onClick={() => handleChart('Same day last year')}
                     type="checkbox" className='bg-[#f5f9fa] mt-4' />
                     <div>
                         <p className='text-gray-500'>Same day last week</p>
