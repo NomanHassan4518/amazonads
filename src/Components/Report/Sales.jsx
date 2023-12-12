@@ -173,7 +173,7 @@ const Sales = () => {
     const chart1Series = chart1Data.series.filter((item) => selectedItems.includes(item.name))
     const chart2Series = chart2Data.series.filter((item) => selectedItems1.includes(item.name))
     return (
-        <div className='border border-gray-400 py-2 px-4  bg-[#f5f9fa]'>
+        <div className='border border-gray-400 py-2 px-4  bg-[#f5f9fa] cursor-default'>
             <div className="flex items-center justify-between">
                 <p className='text-[20px] font-bold'>Compare Sales</p>
 
